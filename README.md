@@ -16,8 +16,6 @@ Contao extension to allow registration for events.
   <li>Export registrations: Allows you to export registrations as CSV</li>
   <li>Supports custom number of participants.</li>
   <li>Waiting list with notification</li>
-  <li>Multiple registrations: Starting with version 2.2.0 you can also allow visitors to register for multiple events at once.</li>
-  <li>Member Registration List: This module will list all event registrations of the currently logged in front end user. It will also show links to Confirm (if applicable) or Cancel the registration.</li>
 </ul>
 
 
@@ -27,21 +25,7 @@ Contao extension to allow registration for events.
   
   ![DE](documentation/de.png) [Deutsches Handbuch](documentation/german.md)
 
-## Examples
 
-| *Event calendar with yoga courses.* |
-|:--:| 
-| ![Kurskalender](documentation/images/kurskalender.png) | 
-
-
-| *Possibility to select multiple courses for booking.* |
-|:--:| 
-| ![Kurskalender mit ausgewählten Kursen](documentation/images/kurskalender-mit-auswahl.png) | 
-
-
-| *Booking form with selected courses.* |
-|:--:| 
-| ![Buchungsformular mit ausgewählten Kursen](documentation/images/multi-booking-form.png) | 
 
 
 
