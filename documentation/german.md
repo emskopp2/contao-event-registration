@@ -116,28 +116,4 @@ Beachten Sie, dass dies auch Auswirkungen auf die Standardbeschriftungen des Fro
 Standardmäßig wird bei jeder Registrierung von einer Person ausgegangen. Es ist jedoch auch möglich, dem Besucher, der sich für eine Veranstaltung anmeldet, zu erlauben, die Anzahl der Personen für diese Registrierung selbst festzulegen. Fügen Sie dazu ein neues Textformularfeld (vorzugsweise mit numerischer Validierung) mit dem Feldnamen in das Formular ein `amount`. Dadurch wird die Standardanzahl überschrieben und die Gesamtzahl der Registrierungen wird ebenfalls um diesen Betrag erhöht.
 
 
-## Mehrfachregistrierungen
 
-Ab der Version 2.2.0 können Sie Besuchern auch die Anmeldung für mehrere Veranstaltungen gleichzeitig ermöglichen. Dafür gibt es nun zwei neue Funktionen:
-
-Ein Front-End-Modul für den Veranstaltungsregistrierungskalender , das ein normales Kalendermodul (genau wie der reguläre Kalender) mit einem Kontrollkästchen für jede Veranstaltung im Kalender rendert.
-Ein ausgewähltes Ereignisformularfeld , welches die Auswahl in einem Formular des Formulargenerators anzeigt und später verarbeitet.
-
-**Insgesamt muss Folgendes getan werden, um diese Funktion zu nutzen:**
-<ol>
-  <li>Erstellen Sie eine neue Benachrichtigung, die für die Registrierung mehrerer Ereignisse verwendet wird (die Token sind dieselben).</li>
-  <li>Erstellen Sie ein neues Formular, das für die Registrierung mehrerer Veranstaltungen verwendet wird.</li>
-  <li>Fügen Sie in dieses Formular ein ausgewähltes Ereignisformularfeld ein .</li>
-  <li>Wählen Sie außerdem die entsprechende Benachrichtigung aus.</li>
-  <li>Erstellen Sie eine neue Seite, auf der Sie das neue Anmeldeformular einfügen (alternativ können Sie es auch auf derselben Seite wie den Kalender einfügen).</li>
-  <li>Erstellen Sie ein neues Kalendermodul zur Veranstaltungsregistrierung und wählen Sie die zuvor erstellte Seite als Weiterleitungsseite aus (oder keine).</li>
-  <li>Fügen Sie dieses Modul in eine neue Seite ein.</li>
-</ol>
-
-Wenn Sie diese Seite im Frontend aufrufen, siehst du bei den einzelnen Events, für die die Anmeldung aktiviert ist, Checkboxen. Du kannst auch zwischen den Monaten wechseln – die vorherige Auswahl bleibt dabei erhalten. Sobald du auf „Weiter“ klickst, wirst du zum Anmeldeformular weitergeleitet, wo dir eine Liste der Events angezeigt wird, die für diese Anmeldung ausgewählt wurden.
-
-Nach dem Absenden des Registrierungsformulars wird die Benachrichtigung des Formulars wie gewohnt gesendet. Wenn `##reg_confirm_url##` Ihre Benachrichtigung ein Token enthielt, bestätigt die Bestätigungs-URL automatisch die Registrierungen für alle ausgewählten Veranstaltungen.
-
-## Mitglieder-Registrierungsliste
-
-Zusätzlich zu den oben genannten Funktionen gibt es im Benutzerbereich auch ein neues Frontend-Modul für Veranstaltungsregistrierungen . Dieses Modul listet alle Veranstaltungsregistrierungen des aktuell angemeldeten Frontend-Benutzers auf. Es zeigt auch Links zum Bestätigen (falls zutreffend) oder Abbrechen der Registrierung an.
