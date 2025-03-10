@@ -1,11 +1,9 @@
-## To-do
-
-- [ ] Bilder hinzufügen
-- [ ] Textformatierungen überprüfen
+[![](https://img.shields.io/packagist/v/inspiredminds/contao-event-registration.svg)](https://packagist.org/packages/inspiredminds/contao-event-registration)
+[![](https://img.shields.io/packagist/dt/inspiredminds/contao-event-registration.svg)](https://packagist.org/packages/inspiredminds/contao-event-registration)
 
 # Contao Event Registrierung
 
-Diese Contao Erweiterung ermöglicht die Registrerung (Buchung) von Events.
+Diese Contao Erweiterung ermöglicht die Registrierung (Buchung) von Events.
 
 ## Anwendung
 
@@ -13,34 +11,30 @@ Nach der Installation können (einzelne) Events zur Registrierung (Buchung) frei
 
 ![Registrierung erlauben](images/event-registrierung-erlauben.png)
 
-<ul>
-  <li>Registrierungsformular: Wählen Sie aus dem Formulargenerator ein Formular aus, welches für die Registrierung verwendet werden soll. Alle Daten des Formulars werden bei jeder Registrierung gespeichert. Das Formular wird wie gewohnt verarbeitet, d.h. es werden auch Benachrichtigungsmails versendet.</li>
-  <li>Mindestteilnehmerzahl: Du kannst optional eine Mindestteilnehmerzahl festlegen, die Du dann (zusammen mit den aktuell angemeldeten Teilnehmern) im Frontend anzeigen kannst.</li>
-  <li>Maximale Teilnehmerzahl: Sie können optional eine maximale Teilnehmerzahl festlegen. Wird diese Zahl erreicht, ist eine Anmeldung nicht mehr möglich.</li>
-  <li>Ende der Registrierung: Sie können optional ein Datum festlegen, nach dem eine Registrierung nicht mehr möglich ist.</li>
-  <li>Ende der Stornierung: Sie können optional ein Datum festlegen, nach dem eine Stornierung nicht mehr möglich ist.</li>
-  <li>Bestätigung erforderlich: Wenn aktiviert, werden nur bestätigte Registrierungen zur Gesamtzahl der Registrierungen gezählt.</li>
-  <li>Warteliste aktivieren: Hält die Anmeldung auch nach Erreichen der maximalen Teilnehmerzahl offen. Alle Anmeldungen landen auf einer Warteliste und werden automatisch weiterverfolgt, wenn vorherige Anmeldungen storniert werden.</li>
-  <li>Benachrichtigung über Vorrücken von der Warteliste: Diese Benachrichtigung wird gesendet, wenn ein Teilnehmer von der Warteliste vorrückt.</li>
-</ul>
+- Registrierungsformular: Wählen Sie aus dem Formulargenerator ein Formular aus, welches für die Registrierung verwendet werden soll. Alle Daten des Formulars werden bei jeder Registrierung gespeichert. Das Formular wird wie gewohnt verarbeitet, d.h. es werden auch Benachrichtigungsmails versendet.
+- Mindestteilnehmerzahl: Du kannst optional eine Mindestteilnehmerzahl festlegen, die Du dann (zusammen mit den aktuell angemeldeten Teilnehmern) im Frontend anzeigen kannst.
+- Maximale Teilnehmerzahl: Sie können optional eine maximale Teilnehmerzahl festlegen. Wird diese Zahl erreicht, ist eine Anmeldung nicht mehr möglich.
+- Ende der Registrierung: Sie können optional ein Datum festlegen, nach dem eine Registrierung nicht mehr möglich ist.
+- Ende der Stornierung: Sie können optional ein Datum festlegen, nach dem eine Stornierung nicht mehr möglich ist.
+- Bestätigung erforderlich: Wenn aktiviert, werden nur bestätigte Registrierungen zur Gesamtzahl der Registrierungen gezählt.
+- Warteliste aktivieren: Hält die Anmeldung auch nach Erreichen der maximalen Teilnehmerzahl offen. Alle Anmeldungen landen auf einer Warteliste und werden automatisch weiterverfolgt, wenn vorherige Anmeldungen storniert werden.
+- Benachrichtigung über Vorrücken von der Warteliste: Diese Benachrichtigung wird gesendet, wenn ein Teilnehmer von der Warteliste vorrückt.
 
 ## Module
 
 **Die Erweiterung stellt drei neue Event-Module zur Verfügung:**
 
-<ul>
-  <li>Anmeldeformular für die Veranstaltung</li>
-  <li>Bestätigung der Veranstaltungsregistrierung</li>
-  <li>Stornierung der Veranstaltungsregistrierung</li>
-  <li>Veranstaltungsregistrierungsliste</li>
-</ul>
+- Anmeldeformular für die Veranstaltung
+- Bestätigung der Veranstaltungsregistrierung
+- Stornierung der Veranstaltungsregistrierung
+- Veranstaltungsregistrierungsliste
 
 > [!IMPORTANT]
 > Alle diese Module sind optional. Das Veranstaltungsregistrierungsformular muss auf derselben Seite wie das Veranstaltungslesermodul eingefügt werden und zeigt das Veranstaltungsregistrierungsformular an, wenn für die Veranstaltung die Registrierung aktiviert ist. Alternativ ist dieses Formular auch als Vorlagenvariable in Veranstaltungsvorlagen verfügbar.
 
 Die Bestätigungs- und Stornierungsformulare können auf anderen Seiten eingefügt werden. In diesem Fall müssen Sie diese Seiten auch in den Einstellungen des Kalenders angeben. Andernfalls wird davon ausgegangen, dass diese Module auch auf der Veranstaltungsleserseite vorhanden sind. Die Module ermöglichen es Ihnen, einen Knoten für detaillierte Inhalte zu definieren. Dieser Inhalt wird angezeigt, wenn eine Veranstaltungsregistrierung erfolgreich bestätigt oder storniert wurde. Sie können auch eine Benachrichtigung auswählen, die nach erfolgreicher Stornierung oder Bestätigung gesendet wird. Wenn Sie weder die Bestätigungs- noch die Stornierungsfunktion benötigen, müssen diese Module nicht erstellt werden.
 
-Mit dem Modul Event-Registrierungsliste können Sie auf der Event-Reader-Seite eine Liste der Registrierungen für das aktuelle Event anzeigen. Die Liste zeigt nur bestätigte Registrierungen, wenn die Registrierungsbestätigung aktiviert ist, und auch keine stornierten Registrierungen. Standardmäßig `mod_event_registration_list` verwendet die Vorlage für jeden Eintrag eine automatisch generierte Beschriftung gemäß der `list.label` Konfiguration des `tl_event_registration` DCA. Die Standardkonfiguration verwendet die Felder `firstname` und `lastname` – wenn Ihr eigenes Formular diese Werte jedoch nicht hat, müssen Sie eine benutzerdefinierte `mod_even_registration_list` Vorlage erstellen und die richtigen Felder entsprechend ausgeben. Alle übermittelten Werte des Registrierungsformulars für jede Registrierung sind unter dem `form_data` Schlüssel verfügbar. 
+Mit dem Modul Event-Registrierungsliste können Sie auf der Event-Reader-Seite eine Liste der Registrierungen für das aktuelle Event anzeigen. Die Liste zeigt nur bestätigte Registrierungen, wenn die Registrierungsbestätigung aktiviert ist, und auch keine stornierten Registrierungen. Standardmäßig `mod_event_registration_list` verwendet die Vorlage für jeden Eintrag eine automatisch generierte Beschriftung gemäß der `list.label` Konfiguration des `tl_event_registration` DCA. Die Standardkonfiguration verwendet die Felder `firstname` und `lastname` – wenn Ihr eigenes Formular diese Werte jedoch nicht hat, müssen Sie eine benutzerdefinierte `mod_even_registration_list` Vorlage erstellen und die richtigen Felder entsprechend ausgeben. Alle übermittelten Werte des Registrierungsformulars für jede Registrierung sind unter dem `form_data` Schlüssel verfügbar.
 
 **Beispiel:**
 
@@ -50,12 +44,11 @@ Mit dem Modul Event-Registrierungsliste können Sie auf der Event-Reader-Seite e
 <?php $this->block('content'); ?>
   <ul>
     <?php foreach ($this->registrations as $registration): ?>
-      <li><?= $registration->form_data->my_form_field ?></li>
+    <?= $registration->form_data->my_form_field ?>
     <?php endforeach; ?>
   </ul>
 <?php $this->endblock(); ?>
 ```
-
 
 ### Template-Variablen
 
@@ -114,7 +107,6 @@ Beachten Sie, dass dies auch Auswirkungen auf die Standardbeschriftungen des Fro
 
 Standardmäßig wird bei jeder Registrierung von einer Person ausgegangen. Es ist jedoch auch möglich, dem Besucher, der sich für eine Veranstaltung anmeldet, zu erlauben, die Anzahl der Personen für diese Registrierung selbst festzulegen. Fügen Sie dazu ein neues Textformularfeld (vorzugsweise mit numerischer Validierung) mit dem Feldnamen in das Formular ein `amount`. Dadurch wird die Standardanzahl überschrieben und die Gesamtzahl der Registrierungen wird ebenfalls um diesen Betrag erhöht.
 
-
 ## Mehrfachregistrierungen
 
 Ab der Version 2.2.0 können Sie Besuchern auch die Anmeldung für mehrere Veranstaltungen gleichzeitig ermöglichen. Dafür gibt es nun zwei neue Funktionen:
@@ -123,15 +115,14 @@ Ein Front-End-Modul für den Veranstaltungsregistrierungskalender , das ein norm
 Ein ausgewähltes Ereignisformularfeld , welches die Auswahl in einem Formular des Formulargenerators anzeigt und später verarbeitet.
 
 **Insgesamt muss Folgendes getan werden, um diese Funktion zu nutzen:**
-<ol>
-  <li>Erstellen Sie eine neue Benachrichtigung, die für die Registrierung mehrerer Ereignisse verwendet wird (die Token sind dieselben).</li>
-  <li>Erstellen Sie ein neues Formular, das für die Registrierung mehrerer Veranstaltungen verwendet wird.</li>
-  <li>Fügen Sie in dieses Formular ein ausgewähltes Ereignisformularfeld ein .</li>
-  <li>Wählen Sie außerdem die entsprechende Benachrichtigung aus.</li>
-  <li>Erstellen Sie eine neue Seite, auf der Sie das neue Anmeldeformular einfügen (alternativ können Sie es auch auf derselben Seite wie den Kalender einfügen).</li>
-  <li>Erstellen Sie ein neues Kalendermodul zur Veranstaltungsregistrierung und wählen Sie die zuvor erstellte Seite als Weiterleitungsseite aus (oder keine).</li>
-  <li>Fügen Sie dieses Modul in eine neue Seite ein.</li>
-</ol>
+
+1. Erstellen Sie eine neue Benachrichtigung, die für die Registrierung mehrerer Ereignisse verwendet wird (die Token sind dieselben).
+2. Erstellen Sie ein neues Formular, das für die Registrierung mehrerer Veranstaltungen verwendet wird.
+3. Fügen Sie in dieses Formular ein ausgewähltes Ereignisformularfeld ein .
+4. Wählen Sie außerdem die entsprechende Benachrichtigung aus.
+5. Erstellen Sie eine neue Seite, auf der Sie das neue Anmeldeformular einfügen (alternativ können Sie es auch auf derselben Seite wie den Kalender einfügen).
+6. Erstellen Sie ein neues Kalendermodul zur Veranstaltungsregistrierung und wählen Sie die zuvor erstellte Seite als Weiterleitungsseite aus (oder keine).
+7. Fügen Sie dieses Modul in eine neue Seite ein.
 
 Wenn Sie diese Seite im Frontend aufrufen, siehst du bei den einzelnen Events, für die die Anmeldung aktiviert ist, Checkboxen. Du kannst auch zwischen den Monaten wechseln – die vorherige Auswahl bleibt dabei erhalten. Sobald du auf „Weiter“ klickst, wirst du zum Anmeldeformular weitergeleitet, wo dir eine Liste der Events angezeigt wird, die für diese Anmeldung ausgewählt wurden.
 

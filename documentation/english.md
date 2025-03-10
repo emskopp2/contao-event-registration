@@ -1,11 +1,9 @@
 [![](https://img.shields.io/packagist/v/inspiredminds/contao-event-registration.svg)](https://packagist.org/packages/inspiredminds/contao-event-registration)
 [![](https://img.shields.io/packagist/dt/inspiredminds/contao-event-registration.svg)](https://packagist.org/packages/inspiredminds/contao-event-registration)
 
-Contao Event Registration
-=========================
+# Contao Event Registration
 
 Contao extension to allow registration for events.
-
 
 ## Usage
 
@@ -21,7 +19,6 @@ After installation you will have the possibility to enable registration for indi
 - **Require confirmation**: When enabled, only confirmed registrations count towards the total number of registrations.
 - **Enable waiting list**: Keeps the registration open after the maximum amount of participants is reached. All registrations will be put on a waiting list and will automatically be advanced, if prior registrations are cancelled.
 - **Advancement from waiting list notification**: This notification will be sent when a participant is advanced from the waiting list.
-
 
 ### Modules
 
@@ -45,19 +42,17 @@ The _Event registration list_ module can be used to display a list of registrati
 <?php $this->block('content'); ?>
   <ul>
     <?php foreach ($this->registrations as $registration): ?>
-      <li><?= $registration->form_data->my_form_field ?></li>
+    <?= $registration->form_data->my_form_field ?>
     <?php endforeach; ?>
   </ul>
 <?php $this->endblock(); ?>
 ```
-
 
 ### Calendar Settings
 
 As mentioned above there will also be additional settings in your calendars. Per calendar you can configure the redirect page for confirmations as well as the redirect page for cancellations. On these respective pages you then add either the _Event registration confirmation_ module or _Event registration cancellation_ module, if needed.
 
 <img src="https://raw.githubusercontent.com/inspiredminds/contao-event-registration/main/calendar-settings.png" width="778" alt="Calendar settings">
-
 
 ### Template Variables
 
@@ -73,7 +68,6 @@ The following template variables are available in event templates as well as the
 - `$this->reg_regEnd`: Timestamp after which registration is not possible anymore.
 - `$this->reg_cancelEnd`: Timestamp after which cancellation is not possible anymore.
 
-
 ### Simple Tokens
 
 Within notifications, _as well as the node content of the confirmation and cancellation modules_, the following simple tokens are available:
@@ -85,13 +79,11 @@ Within notifications, _as well as the node content of the confirmation and cance
 - `##reg_confirm_url##`: The URL with which the registration can be confirmed.
 - `##reg_cancel_url##`: The URL with which the registration can be cancelled.
 
-
 ## Multiple Languages
 
 This extensions supports [`terminal42/contao-changelanguage`](https://github.com/terminal42/contao-changelanguage). If an event has a main event defined, then the aforementioned option will only be available in the main event. Any registrations will always be associated and counted towards the main event, thus the total number of registrations will be the same across all events associated with the main event.
 
 This also applies to the template variables mentioned above. They will always reference the main event, if available.
-
 
 ## Displaying and Exporting Registrations
 
@@ -111,7 +103,6 @@ The overview also allows you to export the registrations as a CSV. The export al
 
 <img src="https://raw.githubusercontent.com/inspiredminds/contao-event-registration/main/export.png" width="736" alt="Event registration export">
 
-
 ### Backend Configuration
 
 The event registration list in the back end (as well as in the front end module) uses the fields `firstname` and `lastname` by default. However, if your event registration form does not have these fields, you might want to adjust the DCA configuration so that it will show a label suitable to your needs in the back end. For example if your form uses the fields `vorname`, `nachname` and `email` you could configure the back end labels as follows:
@@ -124,35 +115,24 @@ $GLOBALS['TL_DCA']['tl_event_registration']['list']['label']['format'] = '%s %s 
 
 Be advised that this also affects the default labels of the _Event registration list_ front end module.
 
-
 ## User Defined Amount
 
 By default each registration assumes the amount of 1 person for said registration. However it is also possible to allow the visitor who registers for an event to define the number of people for that registration. In order to do this insert a new text form field into the form (preferably with a numeric validation) with the field name `amount`. This will then override the default amount and the total amount of registrations will increase by this amount as well.
 
 ## Multiple Registrations
 
-Starting with version `2.2.0` you can also allow visitors to register for multiple events at once. For this there now two new features:
-
-<ul>
-  <li>An Event registration calendar front end module which renders a normal calendar (just like the regular calendar) module with a checkbox for each event in the calendar.</li>
-  <li>A Selected event form field, which will display and later process the selection in a form of the form generator.</li>
-</ul>
+- Starting with version `2.2.0` you can also allow visitors to register for multiple events at once. For this there now two new features:
+- An Event registration calendar front end module which renders a normal calendar (just like the regular calendar) module with a checkbox for each event in the calendar.
+- A Selected event form field, which will display and later process the selection in a form of the form generator.
 
 **Overall the following needs to be done to use this feature:**
 
-<ol>
-<li>Create a new notifiction which will be used for the registration of multiple events (the tokens are the same).</li>
-<li>Create a new form which will be used for the registration of multiple events.<li>
-<li>In this form insert a Selected event form field.</li>
-<li>Also select the appropriate notification.</li>
-<li>Create a new page where you insert the new registration form (alternatively you could also insert it on the same page as the calendar).</li>
-<li>Create a new Event registration calendar module and select the previously created page as the redirect page (or none).</li>
-<li>Insert this module into a new page.</li>
-</ol>
-  
+Create a new notifiction which will be used for the registration of multiple events (the tokens are the same).Create a new form which will be used for the registration of multiple eventsIn this form insert a Selected event form field.Also select the appropriate notification.Create a new page where you insert the new registration form (alternatively you could also insert it on the same page as the calendar).Create a new Event registration calendar module and select the previously created page as the redirect page (or none).Insert this module into a new page.
+
 If you visit that page in the front end, you will see checkboxes for each event for which the registration is enabled. You can also switch between months - the previous selection will be stored. Once you click on "Continue" you will be redirected to the registration form, where you will see a list of events that were selected for this registration.
 
 After submitting the registration form, the form's notification will be sent as normal. If you had a `##reg_confirm_url##` token in your notification, the confirm URL will automatically confirm the registrations for all the selected events.
 
 ### Member Registration List
+
 In addition to the aforementioned features, there is also a new Event registrations front end module in the User section. This module will list all event registrations of the currently logged in front end user. It will also show links to Confirm (if applicable) or Cancel the registration.
