@@ -1,11 +1,8 @@
-[![](https://img.shields.io/packagist/v/inspiredminds/contao-event-registration.svg)](https://packagist.org/packages/inspiredminds/contao-event-registration)
-[![](https://img.shields.io/packagist/dt/inspiredminds/contao-event-registration.svg)](https://packagist.org/packages/inspiredminds/contao-event-registration)
+# English manual
 
-Contao Event Registration
-=========================
+## for the inspiredminds/contao-event-registration extension
 
 Contao extension to allow registration for events.
-
 
 ## Usage
 
@@ -22,7 +19,6 @@ After installation you will have the possibility to enable registration for indi
 - **Enable waiting list**: Keeps the registration open after the maximum amount of participants is reached. All registrations will be put on a waiting list and will automatically be advanced, if prior registrations are cancelled.
 - **Advancement from waiting list notification**: This notification will be sent when a participant is advanced from the waiting list.
 
-
 ### Modules
 
 The extension provides three new event modules:
@@ -32,13 +28,17 @@ The extension provides three new event modules:
 - Event registration cancellation
 - Event registration list
 
-All of these modules are optional. The _Event registration form_ will need to be inserted on the same page as the event reader module and it will display the event registration form, if the event has registration enabled. Alternatively this form is also available as [template variables](#template-variables) within event templates.
+All of these modules are optional.
+
+> [!IMPORTANT]
+> The _Event registration form_ will need to be inserted on the same page as the event reader module and it will display the event registration form, if the event has registration enabled. Alternatively this form is also available as [template variables](#template-variables) within event templates.
 
 The confirmation and cancellation forms can be inserted on other pages. In that case you also need to specify those pages in the settings of the calendar. Otherwise it is assumed that those modules are also present on the event reader page. The modules allow you to define a _node_ for detailed content. This content will be displayed, when an event registration has been successfully confirmed or cancelled. You are also able to select a notification that will be sent after succesful cancellation or confirmation. If you do not need either confirmation or cancellation functionality, these modules do not need to be created.
 
 The _Event registration list_ module can be used to display a list of registrations for the current event on the event reader page. The list will show only confirmed registrations if the registration confirmation is enabled and it will also not show any cancelled registrations. By default the `mod_event_registration_list` template will use an automatically generated label for each entry according to the [`list.label`](https://docs.contao.org/dev/reference/dca/list/#labels) configuration of the `tl_event_registration` DCA. The default configuration uses the fields `firstname` and `lastname` - however, if your own form does not have these values, you will need to create a custom `mod_even_registration_list` template and output the correct field(s) accordingly. All of the submitted values of the registration form for each registration are available under the `form_data` key. For example:
 
 ```php
+
 <?php $this->extend('block_unsearchable'); ?>
 
 <?php $this->block('content'); ?>
@@ -48,15 +48,13 @@ The _Event registration list_ module can be used to display a list of registrati
     <?php endforeach; ?>
   </ul>
 <?php $this->endblock(); ?>
+
 ```
-
-
 ### Calendar Settings
 
 As mentioned above there will also be additional settings in your calendars. Per calendar you can configure the redirect page for confirmations as well as the redirect page for cancellations. On these respective pages you then add either the _Event registration confirmation_ module or _Event registration cancellation_ module, if needed.
 
 <img src="https://raw.githubusercontent.com/inspiredminds/contao-event-registration/main/calendar-settings.png" width="778" alt="Calendar settings">
-
 
 ### Template Variables
 
@@ -72,7 +70,6 @@ The following template variables are available in event templates as well as the
 - `$this->reg_regEnd`: Timestamp after which registration is not possible anymore.
 - `$this->reg_cancelEnd`: Timestamp after which cancellation is not possible anymore.
 
-
 ### Simple Tokens
 
 Within notifications, _as well as the node content of the confirmation and cancellation modules_, the following simple tokens are available:
@@ -84,13 +81,11 @@ Within notifications, _as well as the node content of the confirmation and cance
 - `##reg_confirm_url##`: The URL with which the registration can be confirmed.
 - `##reg_cancel_url##`: The URL with which the registration can be cancelled.
 
-
 ## Multiple Languages
 
 This extensions supports [`terminal42/contao-changelanguage`](https://github.com/terminal42/contao-changelanguage). If an event has a main event defined, then the aforementioned option will only be available in the main event. Any registrations will always be associated and counted towards the main event, thus the total number of registrations will be the same across all events associated with the main event.
 
 This also applies to the template variables mentioned above. They will always reference the main event, if available.
-
 
 ## Displaying and Exporting Registrations
 
@@ -123,11 +118,9 @@ $GLOBALS['TL_DCA']['tl_event_registration']['list']['label']['format'] = '%s %s 
 
 Be advised that this also affects the default labels of the _Event registration list_ front end module.
 
-
 ## User Defined Amount
 
 By default each registration assumes the amount of 1 person for said registration. However it is also possible to allow the visitor who registers for an event to define the number of people for that registration. In order to do this insert a new text form field into the form (preferably with a numeric validation) with the field name `amount`. This will then override the default amount and the total amount of registrations will increase by this amount as well.
-
 
 ## Multiple Registrations
 

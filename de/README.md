@@ -2,7 +2,11 @@
 
 ## für inspiredminds/contao-event-registration
 
+### Features
+
 - **Registrierungsformular:** Wählen Sie aus dem Formulargenerator ein Formular aus, das für die Registrierung verwendet werden soll. Alle Formulardaten werden bei jeder Registrierung gespeichert. Das Formular wird wie gewohnt verarbeitet, d. h. es werden auch Benachrichtigungs-E-Mails versendet.
+- **Mehrfachregistrierung von Events:** Es besteht die Möglichkeit, über den Kalender mehrere Events per Checkbox auszuwählen und diese dann dem Registrierungsforular zu übergeben.
+- **Bestätigung und Stornierung von Events:** Events als Mitgliederbereich ein neues Frontend-Modul für Veranstaltungsregistrierungen.
 - **Mindestteilnehmerzahl:** Sie können optional eine Mindestteilnehmerzahl festlegen, die Sie dann (zusammen mit den aktuell angemeldeten Teilnehmern) im Frontend anzeigen können.
 - **Maximale Teilnehmerzahl:** Sie können optional eine maximale Teilnehmerzahl festlegen. Wird diese Zahl erreicht, ist eine Anmeldung nicht mehr möglich.
 - **Ende der Registrierung:** Sie können optional ein Datum festlegen, nach dem keine Registrierung mehr möglich ist.
@@ -27,7 +31,7 @@ Alle diese Module sind optional.
 
 Die Bestätigungs- und Stornierungsformulare können auf anderen Seiten eingefügt werden. In diesem Fall müssen Sie diese Seiten ebenfalls in den Kalendereinstellungen angeben. Andernfalls wird vorausgesetzt, dass diese Module auch auf der Veranstaltungsanzeigeseite vorhanden sind. Die Module ermöglichen die Definition eines Knotens für detaillierte Inhalte. Dieser Inhalt wird angezeigt, wenn eine Veranstaltungsanmeldung erfolgreich bestätigt oder storniert wurde. Sie können außerdem eine Benachrichtigung auswählen, die nach erfolgreicher Stornierung bzw. Bestätigung versendet wird. Wenn Sie weder die Bestätigungs- noch die Stornierungsfunktion benötigen, müssen diese Module nicht erstellt werden.
 
-Mit dem Modul „Veranstaltungsregistrierungsliste“ können Sie eine Liste der Anmeldungen für die aktuelle Veranstaltung auf der Veranstaltungsseite anzeigen. Die Liste zeigt nur bestätigte Anmeldungen an, sofern die Anmeldebestätigung aktiviert ist. Abgesagte Anmeldungen werden nicht angezeigt. Standardmäßig mod_event_registration_listverwendet die Vorlage für jeden Eintrag ein automatisch generiertes Label entsprechend der DCA- list.labelKonfiguration tl_event_registration. Die Standardkonfiguration verwendet die Felder firstnameund lastname. Sollte Ihr eigenes Formular diese Werte jedoch nicht enthalten, müssen Sie eine benutzerdefinierte mod_even_registration_listVorlage erstellen und die korrekten Felder entsprechend ausgeben. Alle übermittelten Werte des Registrierungsformulars für jede Anmeldung sind unter dem form_dataSchlüssel verfügbar. 
+Mit dem Modul _Veranstaltungsregistrierungsliste_ können Sie eine Liste der Anmeldungen für die aktuelle Veranstaltung auf der Veranstaltungsseite anzeigen. Die Liste zeigt nur bestätigte Anmeldungen an, sofern die Anmeldebestätigung aktiviert ist. Abgesagte Anmeldungen werden nicht angezeigt. Standardmäßig `mod_event_registration_list` verwendet die Vorlage für jeden Eintrag ein automatisch generiertes Label entsprechend der DCA- `list.label` Konfiguration `tl_event_registration`. Die Standardkonfiguration verwendet die Felder `firstname` und `lastname`. Sollte Ihr eigenes Formular diese Werte jedoch nicht enthalten, müssen Sie eine benutzerdefinierte `mod_even_registration_list` Vorlage erstellen und die korrekten Felder entsprechend ausgeben. Alle übermittelten Werte des Registrierungsformulars für jede Anmeldung sind unter dem `form_data` Schlüssel verfügbar. 
 
 **Beispiel:**
 
@@ -118,8 +122,8 @@ Standardmäßig wird für jede Anmeldung eine Person angenommen. Es ist jedoch a
 
 Ab der Version `2.2.0` können Sie Besuchern auch die gleichzeitige Anmeldung für mehrere Veranstaltungen ermöglichen. Dafür gibt es zwei neue Funktionen:
 
-- Ein Front-End-Modul für den Veranstaltungsregistrierungskalender , das ein normales Kalendermodul (genau wie der reguläre Kalender) mit einem Kontrollkästchen für jede Veranstaltung im Kalender rendert.
-- Ein ausgewähltes Ereignisformularfeld , das die Auswahl in einem Formular des Formulargenerators anzeigt und später verarbeitet.
+- Ein Front-End-Modul für den Veranstaltungsregistrierungskalender, das ein normales Kalendermodul (genau wie der reguläre Kalender) mit einem Kontrollkästchen für jede Veranstaltung im Kalender rendert.
+- Ein ausgewähltes Ereignisformularfeld, das die Auswahl in einem Formular des Formulargenerators anzeigt und später verarbeitet.
 
 **Insgesamt muss Folgendes getan werden, um diese Funktion zu nutzen:**
 
@@ -137,4 +141,4 @@ Nach dem Absenden des Anmeldeformulars wird die Formularbenachrichtigung wie gew
 
 ### Mitgliederregistrierungsliste
 
-Zusätzlich zu den oben genannten Funktionen gibt es im Benutzerbereich ein neues Frontend-Modul für Veranstaltungsregistrierungen . Dieses Modul listet alle Veranstaltungsregistrierungen des aktuell angemeldeten Frontend-Benutzers auf. Außerdem werden Links zum Bestätigen (falls zutreffend) oder Abbrechen der Registrierung angezeigt.
+Zusätzlich zu den oben genannten Funktionen gibt es im Mitgliederbereich ein neues Frontend-Modul für Veranstaltungsregistrierungen. Dieses Modul listet alle Veranstaltungsregistrierungen des aktuell angemeldeten Frontend-Benutzers auf. Außerdem werden Links zum Bestätigen (falls zutreffend) oder Abbrechen der Registrierung angezeigt.

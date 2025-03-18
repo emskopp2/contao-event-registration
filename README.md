@@ -13,6 +13,10 @@ After installation you will have the possibility to enable registration for indi
 
 ![Event settings](en/img/event-settings.png)
 
+It is also possible to add and register multiple events to the registration form:
+
+![Multi registration](de/img/kalender-und-buchungsformular.png)
+
 ## Documentation
 
 ![EN](en/img/en.png) [English manual](en/README.md)
