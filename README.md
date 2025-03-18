@@ -19,7 +19,7 @@ It is also possible to add and register multiple events to the registration form
 
 Members can view their registered events as a list and confirm or cancel events:
 
-![Registration-List](de/img/registrierungsliste-mitglied.png)
+![Registration-List](de/img/registrierungsliste-mitglied-de-en.png)
 
 
 ## Documentation
