@@ -15,14 +15,14 @@ After installation you will have the possibility to enable registration for indi
 
 It is also possible to add and register multiple events to the registration form:
 
-![Multi registration](de/img/kalender-und-buchungsformular.png)
+![Multi registration](de/img/kalender-und-buchungsformular-de.png)
 
 Members can view their registered events as a list and confirm or cancel events:
 
-![Registrations-List](de/img/registrierungsliste-mitglied.png)
+![Registration-List](de/img/registrierungsliste-mitglied.png)
 
 
-## Documentations
+## Documentation
 
 ![EN](en/img/en.png) [English manual](en/README.md)
 
