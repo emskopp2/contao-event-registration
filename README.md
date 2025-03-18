@@ -11,13 +11,18 @@ Contao-Erweiterung, um die Registrierung für Veranstaltungen zu ermöglichen.
 
 After installation you will have the possibility to enable registration for individual events in the event's settings:
 
-![Event settings](en/img/event-settings.png)
+![Event settings](de/img/registrierung-erlauben-de.png)
 
 It is also possible to add and register multiple events to the registration form:
 
 ![Multi registration](de/img/kalender-und-buchungsformular.png)
 
-## Documentation
+Members can view their registered events as a list and confirm or cancel events:
+
+![Registrations-List](de/img/registrierungsliste-mitglied.png)
+
+
+## Documentations
 
 ![EN](en/img/en.png) [English manual](en/README.md)
 

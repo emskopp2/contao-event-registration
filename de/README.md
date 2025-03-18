@@ -1,8 +1,7 @@
+[![](https://img.shields.io/packagist/v/inspiredminds/contao-event-registration.svg)](https://packagist.org/packages/inspiredminds/contao-event-registration)
+[![](https://img.shields.io/packagist/dt/inspiredminds/contao-event-registration.svg)](https://packagist.org/packages/inspiredminds/contao-event-registration)
+
 # Deutsches Handbuch
-
-## für inspiredminds/contao-event-registration
-
-### Features
 
 - **Registrierungsformular:** Wählen Sie aus dem Formulargenerator ein Formular aus, das für die Registrierung verwendet werden soll. Alle Formulardaten werden bei jeder Registrierung gespeichert. Das Formular wird wie gewohnt verarbeitet, d. h. es werden auch Benachrichtigungs-E-Mails versendet.
 - **Mehrfachregistrierung von Events:** Es besteht die Möglichkeit, über den Kalender mehrere Events per Checkbox auszuwählen und diese dann dem Registrierungsforular zu übergeben.
@@ -15,7 +14,7 @@
 - **Warteliste aktivieren:** Hält die Anmeldung auch nach Erreichen der maximalen Teilnehmerzahl offen. Alle Anmeldungen werden auf eine Warteliste gesetzt und automatisch weiterverfolgt, wenn vorherige Anmeldungen storniert werden.
 - **Benachrichtigung über Vorrücken von der Warteliste:** Diese Benachrichtigung wird gesendet, wenn ein Teilnehmer von der Warteliste vorrückt.
 
-### Module
+## Module
 
 **Die Erweiterung bietet drei neue Event-Module:**
 
@@ -48,11 +47,11 @@ Mit dem Modul _Veranstaltungsregistrierungsliste_ können Sie eine Liste der Anm
 <?php $this->endblock(); ?>
 
 ```
-### Kalendereinstellungen
+## Kalendereinstellungen
 
 Wie bereits erwähnt, gibt es in Ihren Kalendern zusätzliche Einstellungen. Pro Kalender können Sie die Weiterleitungsseite für Bestätigungen sowie die Weiterleitungsseite für Stornierungen konfigurieren. Auf diesen Seiten fügen Sie dann bei Bedarf entweder das Modul zur Bestätigung der Veranstaltungsregistrierung oder das Modul zur Stornierung der Veranstaltungsregistrierung hinzu.
 
-### Vorlagenvariablen (Template-Variablen)
+## Vorlagenvariablen (Template-Variablen)
 
 **Folgende Template-Variablen stehen in den Event-Templates sowie dem Template für das Event-Anmeldeformular zur Verfügung:**
 
@@ -66,7 +65,7 @@ Wie bereits erwähnt, gibt es in Ihren Kalendern zusätzliche Einstellungen. Pro
 - `$this->reg_regEnd`: Zeitstempel, nach dem eine Registrierung nicht mehr möglich ist.
 - `$this->reg_cancelEnd`: Zeitstempel, nach dem eine Stornierung nicht mehr möglich ist.
 
-### Einfache Token
+## Einfache Token
 
 **Innerhalb von Benachrichtigungen sowie den Knoteninhalten der *Bestätigungs- und Abbruchmodule* stehen folgende einfache Token zur Verfügung:**
 
@@ -77,13 +76,13 @@ Wie bereits erwähnt, gibt es in Ihren Kalendern zusätzliche Einstellungen. Pro
 - `##reg_confirm_url##`: Die URL, mit der die Registrierung bestätigt werden kann.
 - `##reg_cancel_url##`: Die URL, mit der die Registrierung storniert werden kann.
 
-### Mehrere Sprachen
+## Mehrere Sprachen
 
 Diese Erweiterung unterstützt terminal42/contao-changelanguage. Wenn für eine Veranstaltung eine Hauptveranstaltung definiert ist, ist die oben genannte Option nur für die Hauptveranstaltung verfügbar. Alle Anmeldungen werden immer der Hauptveranstaltung zugeordnet und für diese gezählt, sodass die Gesamtzahl der Anmeldungen für alle mit der Hauptveranstaltung verknüpften Veranstaltungen gleich ist.
 
 Dies gilt auch für die oben genannten Vorlagenvariablen. Diese verweisen immer auf das Hauptereignis, sofern verfügbar.
 
-### Registrierungen anzeigen und exportieren
+## Registrierungen anzeigen und exportieren
 
 Für jedes Event gibt es ein zusätzliches Icon in der Eventliste im Backend.
 
@@ -101,7 +100,7 @@ Innerhalb der Liste können Sie über das Info-Symbol die Details der Veranstalt
 
 - Bild -
 
-### Backend-Konfiguration
+## Backend-Konfiguration
 
 Die Veranstaltungsregistrierungsliste im Backend (sowie im Frontend-Modul) verwendet standardmäßig die Felder `firstname`und `lastname`. Sollte Ihr Veranstaltungsregistrierungsformular diese Felder jedoch nicht enthalten, können Sie die DCA-Konfiguration anpassen, damit im Backend eine passende Beschriftung angezeigt wird. Wenn Ihr Formular beispielsweise die Felder und verwendet `vorname`, können Sie die Backend-Beschriftungen wie folgt konfigurieren: `nachname` `email`
 
@@ -114,11 +113,11 @@ $GLOBALS['TL_DCA']['tl_event_registration']['list']['label']['format'] = '%s %s 
 ````
 Beachten Sie, dass dies auch Auswirkungen auf die Standardbeschriftungen des Front-End-Moduls der Veranstaltungsregistrierungsliste hat.
 
-### Benutzerdefinierter Betrag
+## Benutzerdefinierter Betrag
 
 Standardmäßig wird für jede Anmeldung eine Person angenommen. Es ist jedoch auch möglich, dem Besucher, der sich für eine Veranstaltung anmeldet, die Anzahl der Personen für diese Anmeldung selbst zu überlassen. Fügen Sie dazu ein neues Textfeld (vorzugsweise mit numerischer Validierung) mit dem Feldnamen in das Formular ein `amount`. Dadurch wird die Standardanzahl überschrieben und die Gesamtzahl der Anmeldungen erhöht sich ebenfalls um diesen Betrag.
 
-### Mehrfachregistrierungen
+## Mehrfachregistrierungen
 
 Ab der Version `2.2.0` können Sie Besuchern auch die gleichzeitige Anmeldung für mehrere Veranstaltungen ermöglichen. Dafür gibt es zwei neue Funktionen:
 
@@ -139,6 +138,6 @@ Wenn Sie diese Seite im Frontend aufrufen, sehen Sie für jede Veranstaltung, f�
 
 Nach dem Absenden des Anmeldeformulars wird die Formularbenachrichtigung wie gewohnt versendet. Sofern `##reg_confirm_url##`Ihre Benachrichtigung einen Token enthält, bestätigt die Bestätigungs-URL automatisch die Anmeldungen für alle ausgewählten Veranstaltungen.
 
-### Mitgliederregistrierungsliste
+## Mitgliederregistrierungsliste
 
 Zusätzlich zu den oben genannten Funktionen gibt es im Mitgliederbereich ein neues Frontend-Modul für Veranstaltungsregistrierungen. Dieses Modul listet alle Veranstaltungsregistrierungen des aktuell angemeldeten Frontend-Benutzers auf. Außerdem werden Links zum Bestätigen (falls zutreffend) oder Abbrechen der Registrierung angezeigt.

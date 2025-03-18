@@ -1,14 +1,7 @@
+[![](https://img.shields.io/packagist/v/inspiredminds/contao-event-registration.svg)](https://packagist.org/packages/inspiredminds/contao-event-registration)
+[![](https://img.shields.io/packagist/dt/inspiredminds/contao-event-registration.svg)](https://packagist.org/packages/inspiredminds/contao-event-registration)
+
 # English manual
-
-## for the inspiredminds/contao-event-registration extension
-
-Contao extension to allow registration for events.
-
-## Usage
-
-After installation you will have the possibility to enable registration for individual events in the event's settings:
-
-<img src="https://raw.githubusercontent.com/inspiredminds/contao-event-registration/main/event-settings.png" width="734" alt="Event settings">
 
 - **Registration form**: Select a form from the form generator which will be used for the registration. All the form's data will be saved for each registration. The form is processed as usual, i. e. notifications emails are also sent.
 - **Minimum amount of participants**: You can define an optional minimum amount of participants, which you can then display in the front end (together with the currently registered participants).
