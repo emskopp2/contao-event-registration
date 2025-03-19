@@ -9,7 +9,7 @@
 - **Mindestteilnehmerzahl:** Sie können optional eine Mindestteilnehmerzahl festlegen, die Sie dann (zusammen mit den aktuell angemeldeten Teilnehmern) im Frontend anzeigen können.
 - **Maximale Teilnehmerzahl:** Sie können optional eine maximale Teilnehmerzahl festlegen. Wird diese Zahl erreicht, ist eine Anmeldung nicht mehr möglich.
 - **Ende der Registrierung:** Sie können optional ein Datum festlegen, nach dem keine Registrierung mehr möglich ist.
-- **Ende der Stornierung : Sie können optional ein Datum festlegen, nach dem eine Stornierung nicht mehr möglich ist.
+- **Ende der Stornierung:** Sie können optional ein Datum festlegen, nach dem eine Stornierung nicht mehr möglich ist.
 - **Bestätigung erforderlich:** Wenn aktiviert, werden nur bestätigte Registrierungen zur Gesamtzahl der Registrierungen gezählt.
 - **Warteliste aktivieren:** Hält die Anmeldung auch nach Erreichen der maximalen Teilnehmerzahl offen. Alle Anmeldungen werden auf eine Warteliste gesetzt und automatisch weiterverfolgt, wenn vorherige Anmeldungen storniert werden.
 - **Benachrichtigung über Vorrücken von der Warteliste:** Diese Benachrichtigung wird gesendet, wenn ein Teilnehmer von der Warteliste vorrückt.
