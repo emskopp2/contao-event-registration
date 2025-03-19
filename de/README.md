@@ -112,8 +112,8 @@ $GLOBALS['TL_DCA']['tl_event_registration']['list']['label']['format'] = '%s %s 
 
 ````
 Beachten Sie, dass dies auch Auswirkungen auf die Standardbeschriftungen des Front-End-Moduls der Veranstaltungsregistrierungsliste hat.
-
-## Benutzerdefinierter Betrag
+ 
+## Benutzerdefinierte Teilnehmerzahl
 
 Standardmäßig wird für jede Anmeldung eine Person angenommen. Es ist jedoch auch möglich, dem Besucher, der sich für eine Veranstaltung anmeldet, die Anzahl der Personen für diese Anmeldung selbst zu überlassen. Fügen Sie dazu ein neues Textfeld (vorzugsweise mit numerischer Validierung) mit dem Feldnamen in das Formular ein `amount`. Dadurch wird die Standardanzahl überschrieben und die Gesamtzahl der Anmeldungen erhöht sich ebenfalls um diesen Betrag.
 
