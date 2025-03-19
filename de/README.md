@@ -84,7 +84,7 @@ Dies gilt auch für die oben genannten Vorlagenvariablen. Diese verweisen immer 
 
 ## Registrierungen anzeigen und exportieren
 
-Für jedes Event gibt es ein zusätzliches Icon in der Eventliste im Backend.
+Für jedes Event gibt es im Backend ein zusätzliches Icon in der Eventliste.
 
 - Bild -
 
